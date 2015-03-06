@@ -1,0 +1,478 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>py-bio</title>
+<meta name="author" content="(Anand Reddy Pandikunta)"/>
+
+<link rel="stylesheet" href="http://cdn.jsdelivr.net/reveal.js/2.5.0/css/reveal.css"/>
+<link rel="stylesheet" href="http://cdn.jsdelivr.net/reveal.js/2.5.0/css/theme/simple.css" id="theme"/>
+
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'http://cdn.jsdelivr.net/reveal.js/2.5.0/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<section>
+<section id="sec-1" >
+
+<h2>Python For BioInformaticians</h2>
+</section>
+
+
+</section>
+<section>
+<section id="sec-2" >
+
+<h2>What You Will Learn?</h2>
+<p>
+Using Python In Bioinformatics
+</p>
+</section>
+
+
+</section>
+<section>
+<section id="sec-3" >
+
+<h2>Ask</h2>
+<p>
+Feel free to interrupt &amp; ask during the session.
+</p>
+</section>
+
+
+</section>
+<section>
+<section id="sec-4" >
+
+<h2>What Is Python?</h2>
+<p>
+General purpose, high-level programming language.
+</p>
+</section>
+
+
+</section>
+<section>
+<section id="sec-5" >
+
+<h2>Why Use Python?</h2>
+<ul class="org-ul"><li class="fragment none">Python is the easiest language to learn.<br/></li>
+<li class="fragment none">Readability.<br/></li>
+<li class="fragment none">Develop applications quickly.<br/></li>
+<li class="fragment none">Powerful standard library.<br/></li>
+<li class="fragment none">Scalability from very small to very large programs.<br/></li></ul>
+</section>
+
+
+</section>
+<section>
+<section id="sec-6" >
+
+<h2>Getting Started.</h2>
+<ul class="org-ul"><li class="fragment none">Python runs mostly on all modern operating systems.<br/></li></ul>
+</section>
+
+
+</section>
+<section>
+<section id="sec-7" >
+
+<h2>Using Interpreter</h2>
+<ul class="org-ul"><li class="fragment none">interpreter - reads every line, evaluates, returns result.<br/></li>
+
+<li class="fragment none">variables - No need to give type of the variable.<br/></li>
+
+<li class="fragment none">print() - function, prints result to standard output.<br/></li></ul>
+</section>
+
+
+</section>
+<section>
+<section id="sec-8" >
+
+<h2>Code</h2>
+<div class="org-src-container">
+
+<pre  class="src src-python">&gt;&gt;&gt; 2
+2
+&gt;&gt;&gt; 2 + 2
+4
+&gt;&gt;&gt; <span style="color: #a0522d;">name</span> = <span style="color: #8b2252;">'anand'</span>
+&gt;&gt;&gt; name
+<span style="color: #8b2252;">'anand'</span>
+&gt;&gt;&gt; <span style="color: #a020f0;">print</span>(name)
+anand
+</pre>
+</div>
+</section>
+
+
+</section>
+<section>
+<section id="sec-9" >
+
+<h2>Numbers</h2>
+<ul class="org-ul"><li class="fragment none">General arithmetic<br/></li>
+
+<li class="fragment none">Swapping two numbers<br/></li></ul>
+</section>
+
+
+</section>
+<section>
+<section id="sec-10" >
+
+<h2>Code</h2>
+<div class="org-src-container">
+
+<pre  class="src src-python">&gt;&gt;&gt; 21 / 5
+4
+&gt;&gt;&gt; 21 / 5.0
+4.2
+&gt;&gt;&gt; 2 * 3
+6
+&gt;&gt;&gt; 2 ** 3
+8
+&gt;&gt;&gt; 2 + 3 * 2
+8
+&gt;&gt;&gt; (2 + 3) * 2
+10
+</pre>
+</div>
+</section>
+
+
+</section>
+<section>
+<section id="sec-11" >
+
+<h2>String</h2>
+<ul class="org-ul"><li class="fragment none">single quote ('bio') or double quote ("bio").<br/></li>
+
+<li class="fragment none">triple single/double quotes for multi line string.<br/></li>
+
+<li class="fragment none">strings are immutable data type.<br/></li></ul>
+</section>
+
+
+</section>
+<section>
+<section id="sec-12" >
+
+<h2>Code</h2>
+<div class="org-src-container">
+
+<pre  class="src src-python">&gt;&gt;&gt; <span style="color: #8b2252;">'dna'</span>
+<span style="color: #8b2252;">'dna'</span>
+&gt;&gt;&gt; <span style="color: #8b2252;">"dna"</span>
+<span style="color: #8b2252;">'dna'</span>
+&gt;&gt;&gt; <span style="color: #8b2252;">"""</span>
+<span style="color: #8b2252;">... long</span>
+<span style="color: #8b2252;">... dna</span>
+<span style="color: #8b2252;">... seq</span>
+<span style="color: #8b2252;">... """</span>
+<span style="color: #8b2252;">'\nlong \ndna\nseq\n'</span>
+</pre>
+</div>
+</section>
+
+
+</section>
+<section>
+<section id="sec-13" >
+
+<h2>String operations</h2>
+<div class="org-src-container">
+
+<pre  class="src src-python">&gt;&gt;&gt; <span style="color: #a0522d;">sequence</span> = <span style="color: #8b2252;">'actgaaattaaa'</span>
+&gt;&gt;&gt; sequence.upper()
+<span style="color: #8b2252;">'ACTGAAATTAAA'</span>
+&gt;&gt;&gt; sequence.count(<span style="color: #8b2252;">'a'</span>)
+7
+&gt;&gt;&gt; sequence.replace(<span style="color: #8b2252;">'a'</span>, <span style="color: #8b2252;">'c'</span>)
+<span style="color: #8b2252;">'cctgcccttccc'</span>
+&gt;&gt;&gt; <span style="color: #483d8b;">len</span>(sequence)
+12
+</pre>
+</div>
+</section>
+
+
+</section>
+<section>
+<section id="sec-14" >
+
+<h2>Substrings</h2>
+<div class="org-src-container">
+
+<pre  class="src src-python">&gt;&gt;&gt; sequence.find(<span style="color: #8b2252;">'aaa'</span>)
+4
+&gt;&gt;&gt; sequence[3]
+<span style="color: #8b2252;">'g'</span>
+&gt;&gt;&gt; sequence[3:5]
+<span style="color: #8b2252;">'ga'</span>
+&gt;&gt;&gt; sequence[-1]
+<span style="color: #8b2252;">'a'</span>
+&gt;&gt;&gt; sequence[-3:-2]
+<span style="color: #8b2252;">'a'</span>
+</pre>
+</div>
+</section>
+
+
+</section>
+<section>
+<section id="sec-15" >
+
+<h2>Exercise</h2>
+<ul class="org-ul"><li class="fragment none">Calcuate GC content of 'cctgccactataccc'<br/></li></ul>
+</section>
+
+
+</section>
+<section>
+<section id="sec-16" >
+
+<h2>Booleans</h2>
+<ul class="org-ul"><li class="fragment none">True and False are Boolean values in Python.<br/></li>
+
+<li class="fragment none">Python uses keyword and, or, not for and, or, not operations.<br/></li>
+
+<li class="fragment none">Truth table<br/></li></ul>
+</section>
+
+
+</section>
+<section>
+<section id="sec-17" >
+
+<h2>Conditionals</h2>
+<ul class="org-ul"><li class="fragment none">Python uses if, elif, else for branching.<br/></li>
+<li class="fragment none">== is used to check two values are equal<br/></li>
+<li class="fragment none">!= is used for non equality checks.<br/></li></ul>
+</section>
+
+
+</section>
+<section>
+<section id="sec-18" >
+
+<h2>Code</h2>
+<div class="org-src-container">
+
+<pre  class="src src-python">&gt;&gt;&gt; <span style="color: #a0522d;">seq1</span> = <span style="color: #8b2252;">'atc'</span>
+&gt;&gt;&gt; <span style="color: #a0522d;">seq2</span> = <span style="color: #8b2252;">'atc'</span>
+&gt;&gt;&gt; seq1 == seq2
+<span style="color: #008b8b;">True</span>
+&gt;&gt;&gt; <span style="color: #a020f0;">if</span> seq1 == seq2:
+...   <span style="color: #a020f0;">print</span>(<span style="color: #8b2252;">'both are equal'</span>)
+...
+both are equal
+</pre>
+</div>
+</section>
+
+
+</section>
+<section>
+<section id="sec-19" >
+
+<h2>Lists</h2>
+<ul class="org-ul"><li class="fragment none">List is collection of heterogenous data type.<br/></li>
+
+<li class="fragment none">List is similar to array in other languages.<br/></li>
+
+<li class="fragment none">Size of the list grows over the course of the program.<br/></li></ul>
+</section>
+
+
+</section>
+<section>
+<section id="sec-20" >
+
+<h2>Code</h2>
+<div class="org-src-container">
+
+<pre  class="src src-python">&gt;&gt;&gt; <span style="color: #a0522d;">data</span> = [<span style="color: #8b2252;">'homosapiens'</span>, 2015, 03, <span style="color: #8b2252;">'life exists'</span>]
+&gt;&gt;&gt; data[0]
+<span style="color: #8b2252;">'homosapiens'</span>
+&gt;&gt;&gt; <span style="color: #483d8b;">len</span>(data)
+4
+&gt;&gt;&gt; data[-1]
+<span style="color: #8b2252;">'life exists'</span>
+&gt;&gt;&gt; <span style="color: #a020f0;">print</span>(data)
+[<span style="color: #8b2252;">'homosapiens'</span>, 2015, 3, <span style="color: #8b2252;">'life exists'</span>]
+&gt;&gt;&gt; <span style="color: #a0522d;">more_data</span> = [data, <span style="color: #8b2252;">'valid data'</span>]
+&gt;&gt;&gt; <span style="color: #a020f0;">print</span>(more_data)
+[[<span style="color: #8b2252;">'homosapiens'</span>, 2015, 3, <span style="color: #8b2252;">'life exists'</span>], <span style="color: #8b2252;">'valid data'</span>]
+</pre>
+</div>
+</section>
+
+
+</section>
+<section>
+<section id="sec-21" >
+
+<h2>For loop</h2>
+<p>
+for loop can be used against anything which is iterable
+</p>
+</section>
+
+
+</section>
+<section>
+<section id="sec-22" >
+
+<h2>Code</h2>
+<div class="org-src-container">
+
+<pre  class="src src-python">&gt;&gt;&gt; <span style="color: #a020f0;">for</span> i <span style="color: #a020f0;">in</span> <span style="color: #8b2252;">"bioinformatics"</span>:
+...     <span style="color: #a020f0;">print</span>(i)
+
+&gt;&gt;&gt; <span style="color: #a020f0;">for</span> i <span style="color: #a020f0;">in</span> [<span style="color: #8b2252;">'sequence'</span>, 12, <span style="color: #8b2252;">'ggta'</span>, <span style="color: #8b2252;">'actgc'</span>]:
+...   <span style="color: #a020f0;">print</span>(i)
+...
+sequence
+12
+ggta
+actgc
+</pre>
+</div>
+</section>
+
+
+</section>
+<section>
+<section id="sec-23" >
+
+<h2>Files</h2>
+<p>
+Open the sequence file.
+</p>
+
+<p>
+Loop over the file to read.
+</p>
+
+<p>
+Close the file.
+</p>
+</section>
+
+
+</section>
+<section>
+<section id="sec-24" >
+
+<h2>Code</h2>
+<div class="org-src-container">
+
+<pre  class="src src-python">&gt;&gt;&gt; <span style="color: #a0522d;">f</span> = <span style="color: #483d8b;">open</span>(<span style="color: #8b2252;">'sample.fasta'</span>)
+&gt;&gt;&gt; <span style="color: #a020f0;">for</span> line <span style="color: #a020f0;">in</span> f:
+...   <span style="color: #a020f0;">print</span>(line)
+
+&gt;&gt;&gt; f.close()
+</pre>
+</div>
+</section>
+
+
+</section>
+<section>
+<section id="sec-25" >
+
+<h2>Exercise</h2>
+<p>
+Open a fasta file &amp; count nucleotides.
+</p>
+</section>
+
+
+</section>
+<section>
+<section id="sec-26" >
+
+<h2>Resources</h2>
+<p>
+<a href="http://python.org/">http://python.org/</a>
+</p>
+
+<p>
+<a href="http://interactivepython.org/">http://interactivepython.org/</a>
+</p>
+
+<p>
+<a href="http://learnpythonthehardway.org/">http://learnpythonthehardway.org/</a>
+</p>
+
+<p>
+Bioinformatics Programming By Mitchell L Model
+</p>
+</section>
+
+
+</section>
+<section>
+<section id="sec-27" >
+
+<h2>Questions</h2>
+</section>
+</section>
+</div>
+</div>
+
+<script src="http://cdn.jsdelivr.net/reveal.js/2.5.0/lib/js/head.min.js"></script>
+<script src="http://cdn.jsdelivr.net/reveal.js/2.5.0/js/reveal.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: true,
+rollingLinks: false,
+keyboard: true,
+overview: true,
+
+theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/fade/none
+transitionSpeed: 'default',
+multiplex: {
+    secret: '', // null if client
+    id: '', // id, obtained from socket.io server
+    url: '' // Location of socket.io server
+},
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+ { src: 'http://cdn.jsdelivr.net/reveal.js/2.5.0/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+ { src: 'http://cdn.jsdelivr.net/reveal.js/2.5.0/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: 'http://cdn.jsdelivr.net/reveal.js/2.5.0/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: 'http://cdn.jsdelivr.net/reveal.js/2.5.0/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+ { src: 'http://cdn.jsdelivr.net/reveal.js/2.5.0/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+ { src: 'http://cdn.jsdelivr.net/reveal.js/2.5.0/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+]
+});
+</script>
+</body>
+</html>
